@@ -3,6 +3,8 @@ node{
   git 'https://github.com/gnanesh12/gnan'
   }
   stage('Compile-Package'){
-  sh 'mvn package'
+ def mvnhome = tool name: 'maven-1', type: 'maven' 
+ sh "${mvnhome}/mvn package"
+ 
   }
 }
